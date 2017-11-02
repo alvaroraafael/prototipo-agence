@@ -1,2 +1,2 @@
-# prototipo-agence
-Practica para performance comercial
+# Prototipo Agence
+> Prototipo de evaluación de candidato.
