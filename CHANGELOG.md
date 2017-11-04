@@ -3,6 +3,12 @@ Todos los cambios notables en este proyecto se documentarán en este archivo.
 
 Este proyecto se adhiere a [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 1.0.0-alpha.3 (04/11/2017)
+- Se agrego la configuracion del layout y autoload
+- Se agregaron nuevos recursos graficos
+- Se agrego jquery y elementos estaticos basicos del layout
+- Se agregaron los archivos del framework CSS
+
 ## 1.0.0-alpha.2 (03/11/2017)
 - Se agregaron las vistas base para el layout
 - Se agrego la libreria layout
