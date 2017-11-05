@@ -3,6 +3,12 @@ Todos los cambios notables en este proyecto se documentarán en este archivo.
 
 Este proyecto se adhiere a [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 1.0.0-alpha.4 (05/11/2017)
+- Se modificaron los archivos del layout y el controlador inicio para la vista principal
+- Se modificaron elementos estaticos basicos del layout
+- Se agregaron nuevos elementos estaticos basicos del layout
+- Se agregaron nuevos recursos graficos
+
 ## 1.0.0-alpha.3 (04/11/2017)
 - Se agrego la configuracion del layout y autoload
 - Se agregaron nuevos recursos graficos
