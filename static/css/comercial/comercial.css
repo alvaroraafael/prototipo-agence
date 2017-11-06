@@ -1,0 +1,296 @@
+@charset "utf-8";
+/*!
+ * comercial.css (http://agence.guettsoft.com)
+ * Copyright 2017, Álvaro Güette.
+ * Publicado bajo licencia MIT license. (https://raw.githubusercontent.com/alvaroraafael/prototipo-agence/master/LICENSE.md)
+ */
+
+/* Estilo general */
+.top-nav {
+	height: 90px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: #fff;
+	background-color: transparent;
+	width: 100%;
+	border-bottom: 5px solid #01579b;
+	margin-bottom: 6px;
+	height: auto;
+} 
+
+.top-nav .nav-wrapper {
+    min-height: 85px;
+    padding-top: 26px;
+}
+
+.top-nav a.page-title {
+	line-height: 40px;
+	font-size: 22px;
+	font-weight: 300;
+	color: #01579b;
+}
+
+.btn-back-left{
+	float: left;
+	margin-right: 15px;
+	margin-top: 25px;
+}
+
+.container-option{
+	margin-bottom: 18px;
+	overflow: hidden;
+	margin-top: 15px;
+}
+
+.container-option .list-option{
+	text-align: right;
+
+}
+
+.input-field .prefix ~ label {
+    margin-left: 0px !important;
+}
+
+.container-option .list-option {
+    text-align: right;
+    float: right;
+    margin-top: -82px;
+}
+
+.material-table.z-depth-1 {
+    margin-top: -30px;
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+    font-size: 16px;
+    color: #01579b;
+    display: block;
+    line-height: 22px;
+    padding: 14px 16px;
+}
+
+/* formato tabla */
+
+.btn-back-left{
+	float: left;
+	margin-right: 15px;
+	margin-top: 27px;
+}
+
+
+.container-option-comercial{
+	text-align: right;
+	margin-bottom: 18px;
+	overflow: hidden;
+	margin-top: 15px;
+}
+
+.btn-periodo-left{
+	float: left;
+} 
+
+.dataTables_empty{
+	text-align: center;
+	background-color: #ebebeb;
+	text-transform: uppercase;
+}
+
+.display table tr{
+	cursor: pointer;
+}
+
+#consultores-table_paginate a {
+    color: #555 !important;
+    margin-left: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.item-selected {
+ background-color: #efefef;
+ -webkit-box-shadow: inset 5px 0px 0px 0px rgba(1,87,155,1);
+ -moz-box-shadow: inset 5px 0px 0px 0px rgba(1,87,155,1);
+ box-shadow: inset 5px 0px 0px 0px rgba(1,87,155,1);
+}
+
+.material-table table tr{
+  cursor: pointer;
+}
+
+.td-space{
+    padding-left: 20px;
+}
+
+.material-table {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 0px;
+}
+
+#consultores-table_filter {
+    float: left;
+    width: 40%;
+}
+
+#consultores-table_filter input{
+    width:100%;
+}
+
+#consultores-table_length {
+    float: right;
+}
+
+
+#consultores-table_filter {
+    margin-bottom: 20px;
+}
+
+.swal2-modal {
+    font-family: 'Roboto', Helvetica, Arial, sans-serif !important;
+    border-radius: 0px !important;
+}
+
+.swal2-modal .swal2-title {
+    font-weight: 300 !important;
+}
+
+.swal2-modal .swal2-styled {
+    border: 0 !important;
+    border-right-color: transparent !important;
+    border-left-color: transparent !important;
+    border-radius: 0px !important;
+}
+
+.pointer{
+    cursor: pointer !important;
+}
+
+.t-small tr td {
+    padding: 10px 5px !important;
+}
+
+.card {
+    margin: 1.5rem 0 -2rem 0px;
+}
+
+
+@media only screen and (max-width: 1150px){
+
+	.container-option .list-option {
+	    margin-top: -25px;
+	}
+
+	.responsive{
+		width: 50% !important;
+	}
+
+	.list-option {
+	    width: 100%;
+	}
+
+	.list-option a {
+		width: 32.8% !important;
+	}
+
+	.material-table.z-depth-1 {
+	    margin-top: 20px;
+	}
+
+	.card {
+	    margin: 15px;
+	}
+
+}
+
+@media only screen and (max-width: 768px) {
+
+	.top-nav a.page-title {
+		line-height: 40px;
+		font-size: 20px;
+		font-weight: 300;
+		color: #01579b;
+	}	
+
+
+	.container-option .list-option {
+	    margin-top: -25px;
+	}
+
+	.hide-field{
+		display: none;
+	}
+
+	.list-option a {
+	    font-size: 10px;
+	    outline: 0;
+	    padding: 0 1rem;
+	    transition: none;
+	}	
+
+}
+
+@media only screen and (max-width: 480px) {
+
+	.top-nav {
+		margin-top:20px;
+	} 
+
+	.top-nav a.page-title {
+		line-height: 40px;
+		font-size: 14px;
+		font-weight: 300;
+		color: #01579b;
+	}	
+
+	.top-nav .nav-wrapper {
+	    min-height: 80px;
+	    padding-top: 30px;
+	}
+
+	.picker--opened .picker__frame {
+	    top: 12%;
+	    bottom: auto;
+	}
+
+	.list-option a {
+		width: 100% !important;
+		margin: 6px;
+	    font-size: 14px;
+	    padding: 0 2rem;		
+	}	
+
+	.responsive{
+		width: 100% !important;
+	}
+
+	div.dataTables_wrapper div.dataTables_info {
+	    padding-top: 20px;
+	    white-space: nowrap;
+	    padding-bottom: 20px;
+	}	
+
+	#consultores-table_filter {
+	    float: left;
+	    width: 80%;
+	    margin-top: 10px;
+	    margin-bottom: 20px;
+	}
+
+	#consultores-table_length {
+	    float: right;
+	    width: 98%;
+	}	
+
+	.dataTables_wrapper .select-wrapper {
+	    width: 50%;
+	    margin: 0 10px;
+	    display: inline-block;
+	}
+
+	div.dataTables_wrapper div.dataTables_info {
+	    padding-top: 20px;
+	    white-space: initial;
+	    padding-bottom: 20px;
+	}	
+
+}
