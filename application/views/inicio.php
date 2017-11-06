@@ -3,7 +3,7 @@
 			<!-- main-description -->
 			<div class="main-description">
 			    <h2 class="header">Protótipo para Avaliação de Candidato.</h2>
-			    <p class="caption">A Avaliação consiste no desenvolvimento da funcionalidade "<a href="#">Performance Comercial</a>" (Comercial -&gt; Performance Comercial).</p>
+			    <p class="caption">A Avaliação consiste no desenvolvimento da funcionalidade "<a href="<?php echo base_url();?>comercial/">Performance Comercial</a>" (Comercial -&gt; Performance Comercial).</p>
 			</div>			    	
 
 			<div class="author">

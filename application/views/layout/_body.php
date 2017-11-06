@@ -55,7 +55,7 @@
 								</a>
 								<div class="collapsible-body">
 									<ul>
-										<li><a href="#">Performance Comercial</a></li>
+										<li><a href="<?php echo base_url();?>comercial/">Performance Comercial</a></li>
 									</ul>
 								</div>
 							</li>
