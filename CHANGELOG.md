@@ -3,6 +3,12 @@ Todos los cambios notables en este proyecto se documentarán en este archivo.
 
 Este proyecto se adhiere a [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 1.0.0-alpha.5 (06/11/2017)
+- Se agregaron la vista y el controlador de la funcionalidad comercial
+- Se agregaron nuevos elementos estaticos para comercial
+- Se agregaron las url de la funcionalidad comercial
+- Se agregaron nuevos recursos graficos para la funcionalidad comercial
+
 ## 1.0.0-alpha.4 (05/11/2017)
 - Se modificaron los archivos del layout y el controlador inicio para la vista principal
 - Se modificaron elementos estaticos basicos del layout
