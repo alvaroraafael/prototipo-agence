@@ -35,10 +35,14 @@ $config['layout_styles'] =  array(
 								);
 
 $config['layout_scripts_header'] =  array(
-									'static/libs/jquery/jquery-3.2.1.min.js',								
+									'static/libs/jquery/jquery-3.2.1.min.js',
+									'static/libs/moment/js/moment-with-locales.min.js',
+									'static/libs/sweetalert2/js/sweetalert2.all.min.js',
+
+
+									'static/js/layout.min.js',																
 								);
 
 $config['layout_scripts_footer'] =  array(
 									'static/libs/materialize/js/materialize-0.100.2.min.js',
-									'static/js/layout.min.js',
 								);
