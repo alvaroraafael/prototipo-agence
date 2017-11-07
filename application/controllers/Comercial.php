@@ -62,6 +62,7 @@ class Comercial extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->library('layout');
+		$this->load->model('consultores');		
 		log_message('info', 'El controlador comercial se ha iniciado');
 	}
 
@@ -92,12 +93,18 @@ class Comercial extends CI_Controller {
 	 * con_desempenho
 	 * 	 	 
 	 * Esta funcion muestra la lista de consultores y cada una de las
-	 * opciones disponibles para se procesadas 
+	 * opciones disponibles para ser procesadas 
 	 *
 	 * @return html
 	 */
 	public function con_desempenho(){
-		$html = $this->load->view('comercial/con_desempenho','',true);
+		$data['breadcrumb'] = 'Consultor';
+		$data['author'] = $this->config->item('author');
+		$data['email'] = $this->config->item('email');		
+		$data['min_data_emissao'] = $this->consultores->menor_data_emissao();
+		$data['consultores'] = $this->consultores->obtener_consultores();
+
+		$html = $this->load->view('comercial/con_desempenho',$data,true);
 		return $this->layout->response_view($html);		
 	}
 

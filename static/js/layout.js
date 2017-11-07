@@ -41,6 +41,11 @@
 			$('#nav-mobile').css({ overflow: 'auto'});
 		}
 
+	});
+
+})(jQuery);
+
+
 		// muestra el preloader
 		function mostrarPrecarga(){
 			$(".preloader-background").fadeIn();
@@ -52,7 +57,3 @@
 			$(".preloader-background").fadeOut();
 			$(".progress").hide();
 		};
-
-	});
-
-})(jQuery);
