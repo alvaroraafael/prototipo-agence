@@ -3,6 +3,9 @@ Todos los cambios notables en este proyecto se documentarán en este archivo.
 
 Este proyecto se adhiere a [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 1.0.0-alpha.7 (08/11/2017)
+- Se agregaron nuevos elementos estaticos para comercial
+
 ## 1.0.0-alpha.6 (07/11/2017)
 - Modificaciones generales para listar a los consultores
 - Se elimino materialTable por su version minificada
