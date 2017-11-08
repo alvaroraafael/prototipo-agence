@@ -3,6 +3,15 @@ Todos los cambios notables en este proyecto se documentarán en este archivo.
 
 Este proyecto se adhiere a [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 1.0.0-alpha.6 (07/11/2017)
+- Modificaciones generales para listar a los consultores
+- Se elimino materialTable por su version minificada
+- Se agrego el modelo de Consultores
+- Se agrego la libreria para funciones comunes
+- Se agregaron nuevos elementos estaticos para comercial
+- Se modificaron rutas estaticas de archivos en el config layout
+- Se modifico el config de la base de datos para establecer la conexion
+
 ## 1.0.0-alpha.5 (06/11/2017)
 - Se agregaron la vista y el controlador de la funcionalidad comercial
 - Se agregaron nuevos elementos estaticos para comercial
