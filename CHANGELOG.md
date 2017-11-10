@@ -3,6 +3,11 @@ Todos los cambios notables en este proyecto se documentarán en este archivo.
 
 Este proyecto se adhiere a [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 1.0.0-alpha.8 (10/11/2017)
+- Actualizacion del README.md
+- Se agrego la funcionalidad relatorio
+- Se agrego la vista principal de relatorio
+
 ## 1.0.0-alpha.7 (08/11/2017)
 - Se agregaron nuevos elementos estaticos para comercial
 
