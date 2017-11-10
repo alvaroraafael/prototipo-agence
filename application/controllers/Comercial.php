@@ -85,7 +85,6 @@ class Comercial extends CI_Controller {
 		return $this->layout->response_view($html);
 	}
 
-
 	// --------------------------------------------------------------------    
 
 	/**
@@ -108,5 +107,66 @@ class Comercial extends CI_Controller {
 		return $this->layout->response_view($html);		
 	}
 
+	// --------------------------------------------------------------------    
+
+	/**
+	 * 
+	 * relatorio
+	 * 	 	 
+	 * Esta funcion procesa los resultados para la pestaña relatorio
+	 *
+	 * @param array $consultores       Lista de consultores ['alvaro.guette','ejemplo.ejeplo']
+	 * @param string $fechas_inicio    Fecha de inicio del periodo a consultar '2003-01-01'
+	 * @param stering $fecha_fin       Fecha de fin del periodo a consultar '2004-01-01'
+	 * @return string $respuesta	   Vista html renderizada con los datos
+	 */
+	public function relatorio(){
+
+		$parametros = $this->input->post('data');
+		$consultores = $parametros["consultores"];
+		$fecha_inicio = $parametros["fecha_inicio"];
+		$fecha_fin = $parametros["fecha_fin"];
+
+		if (verificar_periodo($fecha_inicio, $fecha_fin) && $consultores)
+		{
+			// consultores
+			$consultores = $this->consultores
+								->listado_co_usuario($consultores);
+			// facturas
+			$facturas = $this->consultores
+							 ->listado_facturas_ordenes_servicios_usuario($consultores, 
+																		  $fecha_inicio, 
+																		  $fecha_fin);
+			if ($facturas)
+			{
+				// facturas agrupadas por consultor
+				$facturas_consultores = $this->consultores
+											 ->facturas_agrupadas_consultores($facturas, 
+																			  $consultores);
+				// facturas agrupadas por periodo
+				$facturas_fechas = $this->consultores
+										->fechas_agrupadas_consultores($facturas_consultores, 
+																		$consultores);			
+		    	// costos fijos por consultor
+		    	$costos_fijos =  $this->consultores
+		    						  ->listado_costo_fijo($consultores);
+				// resumen relatorio
+				$data['consultores'] = $this->consultores
+											->procesar_relatorio($facturas_consultores, 
+																 $facturas_fechas,
+																 $costos_fijos,
+																 $consultores);
+			}else{
+				// Si no hay facturas
+				$data['consultores'] = false;
+			}
+			$data['breadcrumb'] = 'Consultor';
+			$data['periodo'] = $this->consultores->periodo($fecha_inicio, $fecha_fin);			
+			return $this->load->view('comercial/con_desem_consultor_rel',$data,false);
+		}else{
+			return false;
+		}
+
+	}
 
 }
