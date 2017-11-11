@@ -1,7 +1,7 @@
 # Prototipo Agence
 > Prototipo de evaluación de candidato.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/alvaroraafael/prototipo-agence/blob/development/LICENSE.md)
+[![Stability: unstable](https://img.shields.io/badge/stability-unstable-yellow.svg)](https://github.com/alvaroraafael/prototipo-agence) [![License: MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/alvaroraafael/prototipo-agence/blob/development/LICENSE.md)
 
 Basado en un prototipo de agence se inicio la aplicación con la finalidad de desarrollar la funcionalidad "Performance Comercial" (Comercial -> Performance Comercial), que se encarga de presentar en forma de informe, gráficos en forma de barras o torta, la informacion de ganancias netas, costo fijo, comisiones y beneficios de una cantidad de consultores previamente seleccionados. El prototipo es totalmente responsive para dispositivos móviles, tablets y equipos de escritorio.
 
