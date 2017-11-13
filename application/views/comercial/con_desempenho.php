@@ -31,8 +31,8 @@
 	        </div>
 	        <div class="list-option">
 				<a id="btn-relatorio" class="waves-effect waves-light btn blue"><i class="material-icons left">description</i>Relatório</a>
-				<a id="btn-grafico" class="waves-effect waves-light btn blue disabled"><i class="material-icons left">poll</i>Gráfico</a>
-				<a id="btn-pizza" class="waves-effect waves-light btn blue disabled"><i class="material-icons left">donut_large</i>Pizza</a>
+				<a id="btn-grafico" class="waves-effect waves-light btn blue"><i class="material-icons left">poll</i>Gráfico</a>
+				<a id="btn-pizza" class="waves-effect waves-light btn blue"><i class="material-icons left">donut_large</i>Pizza</a>
 	        </div>
 		</div>
 

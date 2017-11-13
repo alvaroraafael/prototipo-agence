@@ -6,6 +6,8 @@
 			    <p class="caption">A Avaliação consiste no desenvolvimento da funcionalidade "<a href="<?php echo base_url();?>comercial/">Performance Comercial</a>" (Comercial -&gt; Performance Comercial).</p>
 			</div>			    	
 
+			<!-- fin main-description -->
+
 			<div class="author">
 				<img src="static/images/author.png" width="76px" height="76px">
 				<div class="quote">
@@ -13,8 +15,9 @@
 				</div>
 			</div>
 
-			<div class="icon-github">		
-				<a class="github-button" href="<?php echo $url_github;?>" aria-label="Follow @alvaroraafael on GitHub" target="_blank"></a>
+			<div class="icon-github">
+				<a class="github-button" href="<?php echo $url_github;?>" aria-label="Follow @alvaroraafael on GitHub">Follow @alvaroraafael</a>
+				<a class="github-button" href="<?php echo $url_github;?>" aria-label="Download alvaroraafael/prototipo-agence on GitHub">Download</a>			
 			</div>
-			<!-- fin main-description -->
 
+			<script async defer src="https://buttons.github.io/buttons.js"></script>

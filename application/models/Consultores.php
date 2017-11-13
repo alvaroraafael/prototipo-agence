@@ -878,7 +878,7 @@ class Consultores extends CI_Model
 	 * @param float $total_imp_inc
 	 * @return float
 	 */
-    private function calcular_valor_neto(float $valor, float $total_imp_inc){
+    private function calcular_valor_neto($valor, $total_imp_inc){
     	return round( $valor - ( ( $valor * $total_imp_inc ) / 100 ) , 3 );
     }
 
