@@ -1,0 +1,37 @@
+@charset "utf-8";
+/*!
+ * comercial.css (http://agence.guettsoft.com)
+ * Copyright 2017, Álvaro Güette.
+ * Publicado bajo licencia MIT license. (https://raw.githubusercontent.com/alvaroraafael/prototipo-agence/master/LICENSE.md)
+ */
+
+#consultores-table_paginate a {
+    color: #555 !important;
+    margin-left: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.item-selected {
+  background-color: #efefef;
+}
+
+.material-table table tr{
+  cursor: pointer;
+}
+
+.text-bold{
+    font-weight: bold;
+}
+
+.collapsible-body{
+	background-color: #fff;
+}
+
+td, th {
+    padding: 10px 5px;
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+    border-radius: 2px;
+}
