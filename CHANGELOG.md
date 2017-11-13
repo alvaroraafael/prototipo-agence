@@ -3,6 +3,14 @@ Todos los cambios notables en este proyecto se documentarán en este archivo.
 
 Este proyecto se adhiere a [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 1.0.0-alpha.9 (13/11/2017)
+- Modificaciones generales para adaptar la funcionalidad pizza y grafico
+- Archivo XML base de pizza para escritura
+- Vista principal para pizza
+- Vista principal para grafico
+- Se agregaron nuevos elementos estaticos para genrar graficos dependientes de adobe flash (Precaucion cambio en futuras versiones)
+- Se agregaron nuevos elementos estaticos para comercial
+
 ## 1.0.0-alpha.8 (10/11/2017)
 - Actualizacion del README.md
 - Se agrego la funcionalidad relatorio
