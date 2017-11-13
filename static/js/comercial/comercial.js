@@ -39,9 +39,9 @@ consultores = {
 
     init: function(){
 
-	    tabla = $(this.tablaConsultores).DataTable({
-		        "lengthMenu": [[5, 25, 50, -1], [5, 25, 50, "Todos"]],              
-		          "language": {
+        tabla = $(this.tablaConsultores).DataTable({
+                "lengthMenu": [[5, 25, 50, -1], [5, 25, 50, "Todos"]],              
+                  "language": {
                         "sProcessing":     "Procesando...",
                         "sLengthMenu":     "Mostrar _MENU_ registros",
                         "sZeroRecords":    "No se encontraron resultados",
@@ -65,14 +65,16 @@ consultores = {
                             "sSortDescending": ": Activar para ordenar la columna de manera descendente"
                         }
                     }
-		   		});
+                });
 
             $("select").val('5'); //seleccionar valor por defecto del select
             $('select').material_select(); //inicializar el select de materialize        
 
-    	this.seleccionarConsultores();          
-    	this.datePickerPeriodo();
-        this.relatorio();        
+        this.seleccionarConsultores();          
+        this.datePickerPeriodo();
+        this.relatorio();
+        this.grafico(); 
+        this.pizza();               
     },
 
     // Instancia el calendario pickadate
@@ -178,72 +180,72 @@ consultores = {
     },
 
     seleccionarConsultores: function(){
-	    $(this.tablaConsultores+' tbody').on( 'click', 'tr', function () {
-	        $(this).toggleClass('item-selected');
-	    } );	
+        $(this.tablaConsultores+' tbody').on( 'click', 'tr', function () {
+            $(this).toggleClass('item-selected');
+        } );    
     },
 
     precargar: function(estatus){
-    	if (estatus){
-		    $(".preloader-background").fadeIn();
-		    $(".progress").show();
-		    return true;
-    	}else{
-	        $(".preloader-background").fadeOut();
-	        $(".progress").hide();
-	        return false;
-    	} 	
+        if (estatus){
+            $(".preloader-background").fadeIn();
+            $(".progress").show();
+            return true;
+        }else{
+            $(".preloader-background").fadeOut();
+            $(".progress").hide();
+            return false;
+        }   
     },
 
     listaConsultores: function(){
 
-    	respuesta = false;
-    	listado = [];
-    	consultor = tabla.rows('.item-selected').data();
-		if (typeof consultor !== 'undefined' && consultor.length > 0) {
-			for (var i=0; i<consultor.length; i++) {
-	 			listado.push(consultor[i][1]);
-			}
-			respuesta = listado;
-		}
+        respuesta = false;
+        listado = [];
+        consultor = tabla.rows('.item-selected').data();
+        if (typeof consultor !== 'undefined' && consultor.length > 0) {
+            for (var i=0; i<consultor.length; i++) {
+                listado.push(consultor[i][1]);
+            }
+            respuesta = listado;
+        }
 
-		return respuesta;
-	},
+        return respuesta;
+    },
 
     relatorio: function(){
         $(this.btnRelatorio).unbind('click').click(function(e) {
         var fechaInicio = consultores.pickerInicio.get('select', 'yyyy-mm-dd');
         var fechaFin = consultores.pickerFin.get('select', 'yyyy-mm-dd');
 
-        	$periodo = consultores.validarPeriodo();
+            $periodo = consultores.validarPeriodo();
 
-        	if ($periodo) {
-    	        var listado = consultores.listaConsultores(); 
-    	        var datos = {consultores: listado, 
-    			        	 fecha_inicio: fechaInicio, 
-    			        	 fecha_fin: fechaFin}
-    			if (listado) {
+            if ($periodo) {
+                var listado = consultores.listaConsultores(); 
+                var datos = {consultores: listado, 
+                             fecha_inicio: fechaInicio, 
+                             fecha_fin: fechaFin}
+                if (listado) {
 
-    		        consultores.precargar(1);
-    			    $.ajax({
-    			        type : "POST",
-    			        url : "relatorio/",
-    			        data : {data:datos},
-    			    }).done(function(respuesta) {
+                    consultores.precargar(1);
+                    $.ajax({
+                        type : "POST",
+                        url : "relatorio/",
+                        data : {data:datos},
+                    }).done(function(respuesta) {
                         $(consultores.contenedorPrincipal).hide();
                         $(consultores.contenedorSecundario).html(respuesta);
                         $(consultores.contenedorSecundario).show();                  
-    			    }).fail(function() {
-    		        	Materialize.toast('Ocurrio un error al intentar procesar relatório', 4000);
+                    }).fail(function() {
+                        Materialize.toast('Ocurrio un error al intentar procesar relatório', 4000);
                         $(consultores.contenedorPrincipal).show();
                         $(consultores.contenedorSecundario).hide();                        
-    			    }).always(function(){
-    		        	consultores.precargar(0);
-    			    });
-    			}else{
+                    }).always(function(){
+                        consultores.precargar(0);
+                    });
+                }else{
                     Materialize.toast('Seleccione al menos un consultor de la lista', 4000);
-    			}
-			}else{
+                }
+            }else{
                     swal({
                         title: "Periodo Invalido",
                         text: "Debe seleccionar una fecha de inicio y una fecha de fin validas.",
@@ -252,6 +254,108 @@ consultores = {
                     });
             }
         });
-	},
+    },
+
+    //
+    grafico: function(){
+        $(this.btnGrafico).unbind('click').click(function(e) {
+
+        var fechaInicio = consultores.pickerInicio.get('select', 'yyyy-mm-dd');
+        var fechaFin = consultores.pickerFin.get('select', 'yyyy-mm-dd');
+
+            $periodo = consultores.validarPeriodo();
+
+            if ($periodo) {
+
+                var listado = consultores.listaConsultores(); 
+
+                var datos = {consultores: listado, 
+                             fecha_inicio: fechaInicio, 
+                             fecha_fin: fechaFin}
+                if (listado) {
+
+                    consultores.precargar(1);
+                    $.ajax({
+                        type : "POST",
+                        url : "grafico/",
+                        data : {data:datos},
+                    }).done(function(respuesta) {
+                        $(consultores.contenedorPrincipal).hide();
+                        $(consultores.contenedorSecundario).html(respuesta);
+                        $(consultores.contenedorSecundario).show();                  
+                    }).fail(function() {
+                        Materialize.toast('Ocurrio un error al intentar procesar grafico', 4000);
+                        $(consultores.contenedorPrincipal).show();
+                        $(consultores.contenedorSecundario).hide();                        
+                    }).always(function(){
+                        consultores.precargar(0);
+                    });
+
+                }else{
+                    Materialize.toast('Seleccione al menos un consultor de la lista', 4000);
+                }
+            }else{
+                    swal({
+                        title: "Periodo Invalido",
+                        text: "Debe seleccionar una fecha de inicio y una fecha de fin validas.",
+                        type: "error",
+                        confirmButtonText: "Aceptar"
+                    });
+            }
+
+
+        });
+    },
+
+    //
+    pizza: function(){
+        $(this.btnPizza).unbind('click').click(function(e) {
+
+        var fechaInicio = consultores.pickerInicio.get('select', 'yyyy-mm-dd');
+        var fechaFin = consultores.pickerFin.get('select', 'yyyy-mm-dd');
+
+            $periodo = consultores.validarPeriodo();
+
+            if ($periodo) {
+
+                var listado = consultores.listaConsultores(); 
+
+                var datos = {consultores: listado, 
+                             fecha_inicio: fechaInicio, 
+                             fecha_fin: fechaFin}
+                if (listado) {
+
+                    consultores.precargar(1);
+                    $.ajax({
+                        type : "POST",
+                        url : "pizza/",
+                        data : {data:datos},
+                    }).done(function(respuesta) {
+                        $(consultores.contenedorPrincipal).hide();
+                        $(consultores.contenedorSecundario).html(respuesta);
+                        $(consultores.contenedorSecundario).show();                  
+                    }).fail(function() {
+                        Materialize.toast('Ocurrio un error al intentar procesar pizza', 4000);
+                        $(consultores.contenedorPrincipal).show();
+                        $(consultores.contenedorSecundario).hide();                        
+                    }).always(function(){
+                        consultores.precargar(0);
+                    });
+
+                }else{
+                    Materialize.toast('Seleccione al menos un consultor de la lista', 4000);
+                }
+            }else{
+                    swal({
+                        title: "Periodo Invalido",
+                        text: "Debe seleccionar una fecha de inicio y una fecha de fin validas.",
+                        type: "error",
+                        confirmButtonText: "Aceptar"
+                    });
+            }
+
+
+        });
+    },
     
 }
